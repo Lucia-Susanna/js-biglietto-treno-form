@@ -6,12 +6,13 @@ const seniorDiscount = 40;
 //richiamo gli elementi che mi servono per far funzionare la logica dall'html
 const btnPrint = document.getElementById('print');
 const btnReset =document.getElementById('delete');
-const price = document.getElementById('prezzo-finale');
+const message = document.getElementById('prezzo-finale');
 
 
 //creo la funzione che mi calcola i prezzi finali
 
 btnPrint.addEventListener('click', printPrice)
+btnReset.addEventListener('click', reset)
 
 function printPrice(){
   const distance = document.getElementById('km').value
@@ -20,14 +21,17 @@ function printPrice(){
   finalPrice= priceKm*distance
 
   if (age==='senior'){
-    finalPrice *= 1-seniorDiscount/100
+    finalPrice *= (1-seniorDiscount/100)
   } else if (age==='junior'){
-    finalPrice *= 1-juniorDiscount/100
+    finalPrice *= (1-juniorDiscount/100)
   }
   
-  price.innerHTML += finalPrice;
+  message.innerHTML = `Il prezzo del biglietto è: € ${finalPrice.toFixed(2)}`
   
-   console.log(finalPrice)
+  return message
+}
 
-  return finalPrice
+function reset(){
+  message.innerHTML = '';
+  
 }

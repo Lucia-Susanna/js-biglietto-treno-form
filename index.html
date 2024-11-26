@@ -5,20 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css' integrity='sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==' crossorigin='anonymous'/>
+  
 </head>
-<body>
-  <label for="km">Inserisci il numero di km che vuoi percorrere:</label>
-  <input type="number" id="km" placeholder="numero km da percorrere">
-  <select name="" id="fascia-eta">
-    <option value="maggiorenne" selected>Maggiorenne</option>
-    <option value="junior">Under 18</option>
-    <option value="senior">Over 65</option>
-  </select>
-  <button id="print">stampa biglietto</button>
-  <button id="delete">Svuota campi</button>
-
-  <p id="prezzo-finale"> Prezzo biglietto: €</p>
-
+<body class="bg-danger">
+  <div class="container my-5 p-5 rounded bg-danger-subtle">
+    <div class="row my-2">
+      <div class="col">
+        <label for="name" class="form-label">Inserisci nome e cognome viaggiatore</label>
+        <input type="text" id="name" placeholder="Nome Cognome" class="form-control">
+      </div>
+      <div class="col">
+        <label for="km" class="form-label">Inserisci il numero di km che vuoi percorrere:</label>
+        <input type="number" id="km" placeholder="Numero km da percorrere" class="form-control">
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-6">
+       <label for="fascia-eta" class="form-label">Seleziona la tua fascia d'età</label>
+       <select name="" id="fascia-eta" class="form-control">
+          <option value="maggiorenne" selected>Maggiorenne</option>
+          <option value="junior">Under 18</option>
+          <option value="senior">Over 65</option>
+       </select>
+      </div> 
+      <div class="col-6">
+        <p class="discount"></p>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <button id="print" class="btn btn-light">stampa biglietto</button>
+      <button id="delete" type="reset" class="btn btn-light">Svuota campi</button>
+    </div>
+  </div>
+  <div class="container bg-light">
+    <div class="row">
+      <div class="col-3 border-end border-danger border-3 bg-secondary-subtle">
+        <p class="">DATI VIAGGIATORE:</p>
+        <p>Nome: </p>
+        <p>Fascia d'età: </p>
+      </div>
+      <div class="col-9">
+        <p>Carrozza: </p>
+        <p>Fila: </p>
+        <p>Posto: </p>
+      </div>
+    </div>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>
