@@ -7,7 +7,17 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
+  <label for="km">Inserisci il numero di km che vuoi percorrere:</label>
+  <input type="number" id="km" placeholder="numero km da percorrere">
+  <select name="" id="fascia-eta">
+    <option value="maggiorenne" selected>Maggiorenne</option>
+    <option value="junior">Under 18</option>
+    <option value="senior">Over 65</option>
+  </select>
+  <button id="print">stampa biglietto</button>
+  <button id="delete">Svuota campi</button>
+
+  <p id="prezzo-finale"> Prezzo biglietto: €</p>
 
   <script src="./script.js"></script>
 </body>
